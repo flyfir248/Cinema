@@ -4,12 +4,34 @@
 <head>
   <title>Search Results</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_result.css') }}">
+  <style>
+    .movie-image {
+      max-width: 300px;
+      height: auto;
+      transition: transform 0.3s;
+    }
+
+    .movie-image:hover {
+      transform: scale(1.1);
+    }
+  </style>
+  <script>
+    function openMovieDetails(imdbId) {
+      var url = "{{ url_for('movie_details', imdb_id='') }}";
+      window.open(url + imdbId, "_blank", "width=800,height=600");
+    }
+  </script>
 </head>
 <body>
   <h1>Search Results</h1>
   <ul>
     {% for movie in movies %}
-      <li><a href="{{ url_for('movie_details', imdb_id=movie['imdb_id']) }}">{{ movie['title'] }}</a></li>
+      <li>
+        <a href="https://www.imdb.com/title/{{ movie.movieID }}" target="_blank">
+          <img class="movie-image" src="{{ movie['cover url'] }}" alt="{{ movie['title'] }}"
+            onclick="openMovieDetails('{{ movie.movieID }}')">
+        </a>
+      </li>
     {% endfor %}
   </ul>
 </body>

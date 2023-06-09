@@ -17,6 +17,12 @@ def search_movies():
     else:
         return render_template('result.html', movies=[])
 
+@app.route('/genre/<genre_name>')
+def genre_movies(genre_name):
+    genre_id = ia.get_keyword(genre_name)
+    movies = ia.get_keyword(genre_id, results=20)
+    return render_template('result.html', movies=movies)
+
 @app.route('/movie/<imdb_id>')
 def movie_details(imdb_id):
     movie = ia.get_movie(imdb_id)
