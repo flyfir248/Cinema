@@ -1,0 +1,16 @@
+<!-- result.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Results</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_result.css') }}">
+</head>
+<body>
+  <h1>Search Results</h1>
+  <ul>
+    {% for movie in movies %}
+      <li><a href="{{ url_for('movie_details', imdb_id=movie['imdb_id']) }}">{{ movie['title'] }}</a></li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
