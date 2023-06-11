@@ -56,4 +56,4 @@ def suggest():
     return render_template('suggestions.html', suggestions=suggestions, page=page, num_pages=num_pages)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
