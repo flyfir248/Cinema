@@ -3,9 +3,100 @@
 <head>
     <title>Movie Suggestion App</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #36393f;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            padding: 20px;
+            background-color: #2f3136;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        select,
+        input[type="number"],
+        input[type="submit"] {
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: none;
+        }
+
+        input[type="number"] {
+            width: 50px;
+        }
+
+        input[type="submit"] {
+            background-color: #7289da;
+            color: white;
+            cursor: pointer;
+        }
+
+        #suggestions-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .movie {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .movie img {
+            width: 100px;
+            height: 150px;
+            margin-right: 10px;
+        }
+
+        .movie-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .movie-title {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .movie-rating {
+            font-size: 16px;
+            color: #666;
+        }
+        .heading {
+    color: white;
+    }
+
+    </style>
 </head>
 <body>
-    <h1>Movie Suggestion App</h1>
+    <h1 class="heading">Movie Suggestion App</h1>
     <form action="/suggest" method="POST">
         <label for="genre">Select a genre:</label>
         <select name="genre" id="genre">
