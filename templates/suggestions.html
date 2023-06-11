@@ -4,26 +4,57 @@
     <title>Movie Suggestions</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='suggestions.css') }}">
     <style>
+        /* Inline styles */
+        body {
+            background-color: #36393f;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* External CSS styles */
         .movie {
             display: flex;
             margin-bottom: 20px;
+            background-color: #2f3136;
+            padding: 10px;
+            border-radius: 5px;
         }
+
         .movie img {
             width: 100px;
             height: 150px;
             margin-right: 10px;
+            border-radius: 5px;
         }
+
         .movie-info {
             display: flex;
             flex-direction: column;
         }
+
         .movie-title {
             font-weight: bold;
             font-size: 18px;
+            margin-top: 0;
+            margin-bottom: 5px;
         }
+
         .movie-rating {
             font-size: 16px;
             color: #666;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .movie-summary {
+            margin-top: 0;
+            margin-bottom: 10px;
         }
     </style>
 </head>
