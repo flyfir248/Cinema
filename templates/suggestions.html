@@ -61,6 +61,23 @@
             margin-top: 0;
             margin-bottom: 10px;
         }
+        .pagination {
+            margin-top: 20px;
+        }
+        .pagination a {
+            display: inline-block;
+            padding: 8px 16px;
+            text-decoration: none;
+            color: #000;
+            background-color: #f2f2f2;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -75,6 +92,26 @@
             </div>
         </div>
     {% endfor %}
+
+    <div class="pagination">
+        {% if has_previous %}
+            <form action="/suggest" method="GET">
+                <button type="submit" name="page" value="{{ page - 1 }}">Previous</button>
+            </form>
+        {% endif %}
+
+        {% for num in page_numbers %}
+            <form action="/suggest" method="GET">
+                <button type="submit" name="page" value="{{ num }}">{{ num }}</button>
+            </form>
+        {% endfor %}
+
+        {% if has_next %}
+            <form action="/suggest" method="GET">
+                <button type="submit" name="page" value="{{ page + 1 }}">Next</button>
+            </form>
+        {% endif %}
+    </div>
 
     <script>
         function openPoster(imageUrl) {

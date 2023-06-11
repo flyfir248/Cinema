@@ -16,6 +16,8 @@ def suggest():
     # Get user preferences from the form
     genre = request.form.get('genre')
     min_rating = float(request.form.get('min_rating'))
+    page = int(request.args.get('page', 1))
+    per_page = 10
 
     # Search for movies based on user preferences
     movies = ia.search_movie(genre)
@@ -44,8 +46,14 @@ def suggest():
                     'summary': movie_summary
                 })
 
-    # Render the suggestions template with the movie suggestions
-    return render_template('suggestions.html', suggestions=suggestions)
+    # Pagination
+    start_index = (page - 1) * per_page
+    end_index = start_index + per_page
+    num_pages = (len(suggestions) + per_page - 1) // per_page
+    suggestions = suggestions[start_index:end_index]
+
+    # Render the suggestions template with the movie suggestions and pagination data
+    return render_template('suggestions.html', suggestions=suggestions, page=page, num_pages=num_pages)
 
 if __name__ == '__main__':
     app.run(debug=True)
