@@ -47,6 +47,19 @@ The Flask routes and API integrations can be modified in the app.py file.
 ### Contributing
 Contributions to the Movie Suggestion App are welcome! If you encounter any issues or have suggestions for improvements, please create a new issue or submit a pull request.
 
+### Demonstration
+The start page
+
+![img.png](img.png)
+
+The search includes 'Comedy' and rating '5'
+
+![img_1.png](img_1.png)
+
+The results
+
+![img_2.png](img_2.png)
+
 ### License
 This project is licensed under the MIT License.
 
