@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Suggestions</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='suggestions.css') }}">
+    <style>
+        .movie {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .movie img {
+            width: 100px;
+            height: 150px;
+            margin-right: 10px;
+        }
+        .movie-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .movie-title {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .movie-rating {
+            font-size: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Movie Suggestions</h1>
+    {% for suggestion in suggestions %}
+        <div class="movie">
+            <img src="{{ suggestion.image }}" alt="Movie Poster" onclick="openPoster('{{ suggestion.image }}')">
+            <div class="movie-info">
+                <h2 class="movie-title">{{ suggestion.title }}</h2>
+                <p class="movie-rating">Rating: {{ suggestion.rating }}</p>
+                <p class="movie-summary">{{ suggestion.summary }}</p>
+            </div>
+        </div>
+    {% endfor %}
+
+    <script>
+        function openPoster(imageUrl) {
+            window.open(imageUrl, 'Movie Poster', 'width=500,height=700');
+        }
+    </script>
+</body>
+</html>
