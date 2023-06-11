@@ -86,3 +86,64 @@ input[type="submit"]:hover {
 .movie-summary {
     margin-bottom: 10px;
 }
+
+label {
+  font-weight: bold;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: #0366d6;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.space {
+  height: 50px;
+}
+
+footer {
+  background-color: #262626;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #007bff;
+}
+
+.footer p {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+}
+
+.social-icons img {
+  max-width: 30px;
+  height: auto;
+}
+
+

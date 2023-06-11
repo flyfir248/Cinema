@@ -78,9 +78,82 @@
             background-color: #4CAF50;
             color: white;
         }
+
+label {
+  font-weight: bold;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: #0366d6;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.space {
+  height: 50px;
+}
+
+footer {
+  background-color: #262626;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #007bff;
+}
+
+.footer p {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+}
+
+.social-icons img {
+  max-width: 30px;
+  height: auto;
+}
+.header-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
     </style>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='res/favicon.png') }}">
 </head>
 <body>
+    <a href="https://pythonpythonme.netlify.app/index.html">
+    <div class="header-image">
+        <img src="{{ url_for('static', filename='res/icon.png') }}" alt="Header image" width="330" height="300">
+    </div>
+    </a>
+    <p></p>
+    <p></p>
+    <p></p>
     <h1>Movie Suggestions</h1>
     {% for suggestion in suggestions %}
         <div class="movie">
@@ -118,5 +191,33 @@
             window.open(imageUrl, 'Movie Poster', 'width=500,height=700');
         }
     </script>
+    <p></p>
+    <p></p>
+    <p></p>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Anoop Johny 🤖</h4>
+                </div>
+            <div class="col-md-4 text-center">
+                <h4>Follow Me</h4>
+                <ul class="social-icons">
+                    <a href="https://www.linkedin.com/in/anoop-johny-30a746181/"><img src="{{ url_for('static', filename='res/linkedin.png') }}" alt="LinkedIn"></a>
+                    <a href="https://github.com/flyfir248"><img src="{{ url_for('static', filename='res/github.png') }}" alt="GitHub"></a>
+                    <a href="https://pythonpythonme.netlify.app/index.html"><img src="{{ url_for('static', filename='res/web.png') }}" alt="Website"></a>
+                    <a href="https://medium.com/@anoopjohny2000"><img src="{{ url_for('static', filename='res/medium.png') }}" alt="Medium"></a>
+                    <a href="https://www.kooapp.com/profile/anoop2DEVLJ"><img src="https://www.kooapp.com/_next/static/media/logoKuSolidOutline.1f4fa971.svg" alt="The Koo App" width="55" height="55"></a>
+                </ul>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-muted">© 2023-2024 PythonPythonME.</p>
+                    <p>All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
