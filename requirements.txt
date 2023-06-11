@@ -1,6 +1,6 @@
-Flask==2.3.2
-IMDbPY==2022.7.9
-Jinja2==3.1.2
-requests==2.31.0
-wikipedia==1.4.0
+Flask
+IMDbPY
+Jinja2
+requests
+wikipedia
 gunicorn
