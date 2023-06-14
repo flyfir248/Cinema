@@ -1,7 +1,5 @@
 Flask
 IMDbPY
-Jinja2
 requests
 wikipedia
 gunicorn
-beautifulsoup4
